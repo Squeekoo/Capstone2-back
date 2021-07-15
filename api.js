@@ -1,5 +1,6 @@
 "use strict";
 const axios = require('axios');
+const ExpressError = require('./expressError');
 const config = require("./config");
 
 const access_key = config.access_key;
@@ -13,6 +14,10 @@ const API_BASE_URL = "https://api.roadgoat.com/api/v2/destinations/auto_complete
 
 class LocinfoApi {
     static async getLocation(name) {
+        if (!name) {
+            throw new ExpressError("Not Found", 404);
+        }
+
         let response = await axios.get(`${API_BASE_URL}?q=${name}`, {
             'headers': {
                 'Authorization': `Basic ${auth_key}`

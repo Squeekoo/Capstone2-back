@@ -9,4 +9,9 @@ describe("GET /locations/:name", () => {
         const res = await request(app).get(`/locations/${name}`);
         expect(res.status).toBe(200);
     });
+
+    it("Should return 404 if name not specified", async () => {
+        const res = await request(app).get(`/locations`);
+        expect(res.status).toBe(404);
+    });
 });

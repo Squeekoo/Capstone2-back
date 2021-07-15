@@ -20,7 +20,8 @@ router.get("/:name", async function (req, res, next) {
         const location = await LocinfoApi.getLocation(req.params.name);
         return res.send(location);
     } catch (error) {
-        return next(error);
+        const err = new ExpressError("Not Found", 404);
+        return next(err);
     }
 });
 
