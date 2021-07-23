@@ -3,11 +3,16 @@
 /** Express for LocInfo */
 
 const express = require('express');
+const cors = require("cors");
 const ExpressError = require("./expressError");
 
 const locationsRoutes = require("./routes/locations");
 
 const app = express();
+
+// Cross-Origin Resource Sharing (CORS)
+app.use(cors());
+
 app.use(express.json());
 
 app.use("/locations", locationsRoutes);
