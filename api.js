@@ -18,7 +18,7 @@ class LocinfoApi {
                 'Authorization': `Basic ${auth_key}`
             }
         });
-        console.log(response.data.data);
+        console.log(response.data);
         return response.data;
     }
 
