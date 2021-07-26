@@ -6,7 +6,8 @@ const express = require('express');
 const cors = require("cors");
 const ExpressError = require("./expressError");
 
-const locationsRoutes = require("./routes/locations");
+const allLocationsRoutes = require("./routes/locations");
+const eachLocationRoutes = require("./routes/location");
 
 const app = express();
 
@@ -15,7 +16,8 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use("/locations", locationsRoutes);
+app.use("/locations", allLocationsRoutes);
+app.use("/location", eachLocationRoutes);
 
 /** 404 Handler */
 
