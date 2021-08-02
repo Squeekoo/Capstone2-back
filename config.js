@@ -11,7 +11,7 @@ const SECRET_KEY = process.env.SECRET_KEY || "secret-dev";
 const access_key = process.env.API_ACCESS_KEY;
 const secret_key = process.env.API_SECRET_KEY;
 
-const PORT = process.env.PORT || 3001;
+const PORT = +process.env.PORT || 3001;
 
 // Use dev database, testing database, or production database
 function getDatabaseUri() {
