@@ -15,7 +15,9 @@ const PORT = +process.env.PORT || 3001;
 
 // Use dev database, testing database, or production database
 function getDatabaseUri() {
-    return (process.env.NODE_ENV === "test") ? "locinfo_test" : process.env.DATABASE_URL || "locinfo";
+    return (process.env.NODE_ENV === "test")
+        ? "locinfo_test"
+        : process.env.DATABASE_URL || "locinfo";
 }
 
 console.log("LocInfo Config:".bold.blue);
