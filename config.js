@@ -28,8 +28,8 @@ console.log("-----");
 
 module.exports = {
     SECRET_KEY,
+    access_key,
+    secret_key,
     PORT,
     getDatabaseUri,
-    access_key,
-    secret_key
 }
