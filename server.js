@@ -2,7 +2,8 @@
 /** Server for LocInfo */
 
 const app = require("./app");
+const { PORT } = require("./config");
 
-app.listen(3001, () => {
-    console.log("Server listening on port 3001");
+app.listen(PORT, () => {
+    console.log(`Server listening on http://localhost:${PORT}`);
 });
